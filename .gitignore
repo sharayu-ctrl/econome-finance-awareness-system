@@ -1,0 +1,90 @@
+# ═══════════════════════════════════════════════
+#  EconoMe — .gitignore
+# ═══════════════════════════════════════════════
+
+# ── SECRETS & CREDENTIALS (NEVER COMMIT) ──────
+.env
+# Keep the example template
+!.env.example
+
+# RSA / JWT keys
+backend/keys/private.pem
+backend/keys/public.pem
+backend/keys/*.pem
+
+# Any stray key files
+*.pem
+*.key
+*.p12
+*.pfx
+
+# ── Python ────────────────────────────────────
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.venv/
+venv/
+env/
+*.egg-info/
+dist/
+build/
+.eggs/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+htmlcov/
+.coverage
+coverage.xml
+
+# ── AI / ML Models (large binary files) ───────
+backend/models/*.gguf
+backend/models/*.onnx
+backend/models/
+
+# ── Celery ────────────────────────────────────
+# Celery beat schedule is a runtime binary state file
+backend/celerybeat-schedule
+backend/celerybeat.pid
+
+# ── Node / Frontend ───────────────────────────
+node_modules/
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+frontend/build/
+
+# ── Docker ────────────────────────────────────
+*.log
+
+# ── Database ──────────────────────────────────
+*.sqlite3
+*.db
+
+# ── OS ────────────────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ── IDE ───────────────────────────────────────
+.vscode/settings.json
+# Keep shared VS Code configs
+!.vscode/launch.json
+!.vscode/extensions.json
+.idea/
+*.swp
+*.swo
+
+# ── Alembic ───────────────────────────────────
+backend/alembic/__pycache__/
+
+# ── Delivery/session artefacts (not source code) ──
+000_START_HERE_FIRST.txt
+COMPLETION_CHECKLIST.md
+DELIVERY_PACKAGE.md
+DOCKERFILE_CONFIG.py
+FINAL_COMPLETION_REPORT.md
+FINAL_DELIVERY_SUMMARY.txt
+DOCUMENTATION_INDEX.md
+FILE_MANIFEST.md

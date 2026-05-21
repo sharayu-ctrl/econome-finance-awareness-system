@@ -1,0 +1,20 @@
+{
+  "recommendations": [
+    "ms-python.python",
+    "ms-python.vscode-pylance",
+    "charliermarsh.ruff",
+    "ms-azuretools.vscode-docker",
+    "esbenp.prettier-vscode",
+    "dbaeumer.vscode-eslint",
+    "bradlc.vscode-tailwindcss",
+    "humao.rest-client",
+    "mtxr.sqltools",
+    "mtxr.sqltools-driver-mysql",
+    "cweijan.vscode-redis-client",
+    "ms-vscode.makefile-tools",
+    "mikestead.dotenv",
+    "redhat.vscode-yaml",
+    "eamodio.gitlens",
+    "yzhang.markdown-all-in-one"
+  ]
+}

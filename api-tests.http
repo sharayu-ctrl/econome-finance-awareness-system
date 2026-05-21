@@ -1,0 +1,153 @@
+### EconoMe — API Test Requests
+### Use with VS Code "REST Client" extension
+### Set @token after login
+
+@baseUrl = http://localhost:8000
+@token = PASTE_ACCESS_TOKEN_HERE
+
+# ─────────────────────────────────────────────────────────────────────────────
+# AUTH
+# ─────────────────────────────────────────────────────────────────────────────
+
+### Health check
+GET {{baseUrl}}/health
+
+### Register new user
+POST {{baseUrl}}/auth/register
+Content-Type: application/json
+
+{
+  "email": "test@econome.in",
+  "password": "SecurePass123!",
+  "full_name": "Rahul Sharma"
+}
+
+### Login
+POST {{baseUrl}}/auth/login
+Content-Type: application/json
+
+{
+  "email": "test@econome.in",
+  "password": "SecurePass123!",
+  "device_info": {
+    "os_name": "Windows",
+    "os_version": "11",
+    "browser_name": "Chrome",
+    "browser_version": "120",
+    "screen_resolution": "1920x1080",
+    "timezone": "Asia/Kolkata",
+    "font_hash": "abc123"
+  }
+}
+
+# ─────────────────────────────────────────────────────────────────────────────
+# FINANCE
+# ─────────────────────────────────────────────────────────────────────────────
+
+### Add expense (NLP input)
+POST {{baseUrl}}/finance/expense
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "raw_text": "Spent 350 on Swiggy dinner",
+  "amount": 350,
+  "note": "Ordered biryani"
+}
+
+### Add income
+POST {{baseUrl}}/finance/income
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "amount": 75000,
+  "source": "Salary - October",
+  "note": "Monthly salary"
+}
+
+### Get monthly summary
+GET {{baseUrl}}/finance/summary
+Authorization: Bearer {{token}}
+
+### Get entries (paginated)
+GET {{baseUrl}}/finance/entries?page=1&page_size=10
+Authorization: Bearer {{token}}
+
+### Get entries by category
+GET {{baseUrl}}/finance/entries?category=Food
+Authorization: Bearer {{token}}
+
+# ─────────────────────────────────────────────────────────────────────────────
+# MACRO DATA
+# ─────────────────────────────────────────────────────────────────────────────
+
+### Get macro snapshot
+GET {{baseUrl}}/macro/snapshot
+Authorization: Bearer {{token}}
+
+# ─────────────────────────────────────────────────────────────────────────────
+# AI INSIGHTS
+# ─────────────────────────────────────────────────────────────────────────────
+
+### Get today's AI insight
+GET {{baseUrl}}/insights/today
+Authorization: Bearer {{token}}
+
+### Run what-if simulation (expenses +10%)
+POST {{baseUrl}}/insights/simulate
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "expense_delta": 0.10
+}
+
+### Run what-if simulation (income -20%, EMI +15%)
+POST {{baseUrl}}/insights/simulate
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "income_delta": -0.20,
+  "emi_delta": 0.15
+}
+
+# ─────────────────────────────────────────────────────────────────────────────
+# LEARNING
+# ─────────────────────────────────────────────────────────────────────────────
+
+### List all lessons
+GET {{baseUrl}}/learning/lessons
+Authorization: Bearer {{token}}
+
+### List beginner lessons
+GET {{baseUrl}}/learning/lessons?difficulty=beginner
+Authorization: Bearer {{token}}
+
+### Get my learning progress
+GET {{baseUrl}}/learning/progress
+Authorization: Bearer {{token}}
+
+# ─────────────────────────────────────────────────────────────────────────────
+# AI TUTOR CHAT
+# ─────────────────────────────────────────────────────────────────────────────
+
+### Send chat message
+POST {{baseUrl}}/chat/message
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "message": "What does rising inflation mean for my grocery bills?"
+}
+
+### Continue conversation (same session)
+POST {{baseUrl}}/chat/message
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "session_id": "PASTE_SESSION_ID_HERE",
+  "message": "How does the repo rate affect my home loan EMI?"
+}

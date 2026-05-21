@@ -1,0 +1,8 @@
+f = open('/app/main.py')
+c = f.read()
+f.close()
+c = c.replace('allow_origins=[chr(34)+chr(42)+chr(34)],', 'allow_origins=["*"],')
+f = open('/app/main.py', 'w')
+f.write(c)
+f.close()
+print('Fixed!')

@@ -1,0 +1,60 @@
+# EconoMe — Python Dependencies
+# Phase 10: Production-ready dependency list
+
+# ── Web Framework ─────────────────────────────────────────────────────────────
+fastapi==0.111.0
+uvicorn[standard]==0.29.0
+gunicorn==22.0.0
+pydantic==2.7.1
+pydantic-settings==2.2.1
+python-socketio==5.10.0
+python-engineio==4.8.0
+
+# ── Database ──────────────────────────────────────────────────────────────────
+sqlalchemy[asyncio]==2.0.30
+aiomysql==0.2.0
+alembic==1.13.1
+
+# ── Cache / Queue ─────────────────────────────────────────────────────────────
+redis[hiredis]==5.0.4
+celery[redis]==5.4.0
+
+# ── Auth & Security ───────────────────────────────────────────────────────────
+python-jose[cryptography]==3.3.0
+bcrypt==4.1.3
+pyotp==2.9.0
+cryptography==42.0.7
+email-validator==2.1.0
+python-multipart==0.0.9
+
+# ── ID Generation ─────────────────────────────────────────────────────────────
+nanoid==2.0.0
+
+# ── AI / ML ───────────────────────────────────────────────────────────────────
+numpy==1.26.4
+scipy==1.13.0
+scikit-learn==1.4.2
+statsmodels==0.14.2
+pandas==2.2.2
+onnxruntime==1.18.0
+jinja2==3.1.4
+
+# ── HTTP Client ───────────────────────────────────────────────────────────────
+httpx==0.27.0
+
+# ── Blockchain ────────────────────────────────────────────────────────────────
+web3==6.18.0
+
+# ── AWS ───────────────────────────────────────────────────────────────────────
+boto3==1.34.101
+
+# ── Utilities ─────────────────────────────────────────────────────────────────
+python-dateutil==2.9.0
+loguru==0.7.2
+pydantic-extra-types==2.3.0
+
+# ── Testing ───────────────────────────────────────────────────────────────────
+pytest==8.2.0
+pytest-asyncio==0.23.6
+pytest-cov==5.0.0
+
