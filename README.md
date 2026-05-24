@@ -253,6 +253,15 @@ GitHub Actions pipeline at `.github/workflows/ci-cd.yml`:
 5. Open a Pull Request
 
 ---
+## 🎥 Project Demo Videos
+
+### Video 1 
+[![Video 1](https://github.com/user-attachments/assets/8dac34a6-352d-40d5-b297-84e3adf7c3bc)
+
+### Video 2 
+[![Video 2](https://github.com/user-attachments/assets/a1df1251-6af0-4889-a9ec-9e7b9a764e9b)
+
+---
 
 ## 📄 License
 
